@@ -1,0 +1,8 @@
+:root {
+    --primary-color: rgb(128, 4, 4);
+    --secondary-color: rgb(173, 37, 37);
+    --tertiary-color: rgb(245, 245, 240);
+    --text-color: #fff;
+    --stext-color: #000;
+    --ttext-color: #666;
+}
