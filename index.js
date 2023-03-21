@@ -95,12 +95,12 @@ let amostragemCarrousel = [
     },
     {
         texto: "Linda Casa na praia em Ubatuba para Locação!",
-        img: "img/casa3 1.png",
+        img: "img/casa-carrousel2.png",
         index: 2,
     },
     {
         texto: "Linda casa na floresta para Locação, imperdível!",
-        img: "img/casa8 1.png",
+        img: "img/casa-carrousel3.png",
         index: 3,
     }
 ]
