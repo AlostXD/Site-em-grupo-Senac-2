@@ -112,9 +112,11 @@
     background-color: var(--secondary-color);
 }
 
-#span2, #span3 {
+#span2,
+#span3 {
     background-color: grey;
 }
+
 /* Fim do Carrousel */
 
 /* Início das Casas */
@@ -273,5 +275,42 @@ footer {
     100% {
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #casas-lista {
+        grid-template-columns: 1fr 1fr;
+    }
+    .active {
+        flex-direction: column;
+    }
+    .img-carrousel {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #casas-lista {
+        grid-template-columns: 1fr;
+    }
+    .active {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .header-principal input {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .img-carrousel {
+        width: 300px;
+    }
+    .header-ul {
+        font-size: 12px;
+        flex-direction: column;
     }
 }

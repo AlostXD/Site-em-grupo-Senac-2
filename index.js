@@ -113,7 +113,7 @@ amostragemCarrousel.forEach(item => {
         <hr>
     </p>
     </div>
-    <img src="${item.img}" alt="casa-1">`
+    <img src="${item.img}" alt="casa-1" class="img-carrousel">`
     conteudoAmostragem.id = `${item.index}`
     console.log(item.index)
     if (item.index == 1) {
