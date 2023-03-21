@@ -77,14 +77,6 @@
 
 /* Início do Carrousel */
 
-.amostragem1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--secondary-color);
-    margin: 12px 0;
-}
-
 .texto-amostragem {
     display: flex;
     flex-direction: column;
@@ -100,10 +92,29 @@
     width: 300px;
 }
 
-.a2 {
-    display: none;
+.carrousel-spans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: all 0.5s ease;
 }
 
+.carrousel-spans-itens {
+    width: 30px;
+    height: 30px;
+    border-radius: 500px;
+    background-color: var(--secondary-color);
+    transition: all 0.5s ease;
+}
+
+#span1 {
+    background-color: var(--secondary-color);
+}
+
+#span2, #span3 {
+    background-color: grey;
+}
 /* Fim do Carrousel */
 
 /* Início das Casas */
@@ -127,6 +138,11 @@
     background-color: var(--tertiary-color);
     padding: 12px 16px;
     border-radius: 12px;
+    transition: all 0.5s ease;
+}
+
+.casas-lista-item:hover {
+    transform: scale(1.05);
 }
 
 .conteudo-casas {
@@ -192,4 +208,70 @@ footer {
 .redes img:hover {
     transform: scale(1.20);
 }
+
 /* Fim do Footer */
+
+.active {
+    display: flex;
+    -webkit-animation: in 700ms ease both;
+    animation: in 700ms ease both;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    margin: 12px 0;
+    padding: 12px 16px;
+}
+
+.inactive {
+    display: none;
+    -webkit-animation: out 700ms ease both;
+    animation: out 700ms ease both;
+}
+
+@-webkit-keyframes in {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes in {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

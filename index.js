@@ -86,3 +86,86 @@ function encaminhar(telefone, nome) {
     let mensagem = "Olá, Tenho Interesse em alugar a Casa"
     window.open(`https://api.whatsapp.com/send?phone=${telefone}&text=${mensagem}: ${nome}`);
 }
+
+let amostragemCarrousel = [
+    {
+        texto: "Linda Mansão em Condomínio Acapulco Guarujá para Locação, imperdível!",
+        img: "img/casa-carrousel.png",
+        index: 1,
+    },
+    {
+        texto: "Linda Casa na praia em Ubatuba para Locação!",
+        img: "img/casa3 1.png",
+        index: 2,
+    },
+    {
+        texto: "Linda casa na floresta para Locação, imperdível!",
+        img: "img/casa8 1.png",
+        index: 3,
+    }
+]
+
+amostragemCarrousel.forEach(item => {
+    let conteudoAmostragem = document.createElement("div")
+    conteudoAmostragem.innerHTML = `
+    <div class="texto-amostragem">
+    <p>${item.texto}
+        <hr>
+    </p>
+    </div>
+    <img src="${item.img}" alt="casa-1">`
+    conteudoAmostragem.id = `${item.index}`
+    console.log(item.index)
+    if (item.index == 1) {
+        console.log("active")
+        conteudoAmostragem.classList = "active"
+    } if (item.index == 2 || item.index == 3) {
+        conteudoAmostragem.classList = "inactive"
+        console.log("inactive")
+    }
+    carrousel.appendChild(conteudoAmostragem)
+})
+
+
+let banner1 = document.getElementById("1")
+let banner2 = document.getElementById("2")
+let banner3 = document.getElementById("3")
+let span1 = document.getElementById("span1")
+let span2 = document.getElementById("span2")
+let span3 = document.getElementById("span3")
+
+let passagem = 1
+
+function passaSlide() {
+    if (passagem == 1) {
+        banner1.classList = "active"
+        banner2.classList = "inactive"
+        banner3.classList = "inactive"
+        span1.style.backgroundColor = "var(--secondary-color)"
+        span2.style.backgroundColor = "grey"
+        span3.style.backgroundColor = "grey"
+        passagem++
+    }
+    else if (passagem == 2) {
+        banner1.classList = "inactive"
+        banner2.classList = "active"
+        banner3.classList = "inactive"
+        span1.style.backgroundColor = "grey"
+        span2.style.backgroundColor = "var(--secondary-color)"
+        span3.style.backgroundColor = "grey"
+        passagem++
+    }
+    else if (passagem == 3) {
+        banner1.classList = "inactive"
+        banner2.classList = "inactive"
+        banner3.classList = "active"
+        span1.style.backgroundColor = "grey"
+        span2.style.backgroundColor = "grey"
+        span3.style.backgroundColor = "var(--secondary-color)"
+        passagem = 1
+    }
+}
+
+
+setInterval(passaSlide, 5000)
+
